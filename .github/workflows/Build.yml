@@ -35,3 +35,8 @@ jobs:
           cmake --build . --config Release --target all
           # ninja
 
+      - name: Install
+        working-directory: build
+        shell: bash
+        run: |
+          cmake --build . --config Release --target install/strip
