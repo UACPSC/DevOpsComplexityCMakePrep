@@ -34,6 +34,11 @@ jobs:
         run: |
           cmake --build . --config Release --target all
           # ninja
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Executable
+          path: |
+            build/srccomplexity
 
       - name: Install
         working-directory: build
@@ -47,6 +52,13 @@ jobs:
         run: |
           srccomplexity < ../srcMLXPathCount.cpp.xml
 
+      - name: Install srcml
+        working-directory: build
+        shell: bash
+        run: |
+          curl -L -O http://131.123.42.41/srcml_1.0.0-1_ubuntu22.04_x86_64.deb
+          apt-get install ./srcml*.deb
+
       - name: Test
         working-directory: build
         continue-on-error: true
@@ -55,7 +67,7 @@ jobs:
           ctest --verbose | tee TestResults.log
       - uses: actions/upload-artifact@v4
         with:
-          name: Test.${{ runner.os }}.log
+          name: Test.log
           path: |
             build/Testing/Temporary/LastTest.log
             build/TestResults.log
