@@ -57,7 +57,7 @@ jobs:
         shell: bash
         run: |
           curl -L -O http://131.123.42.41/srcml_1.0.0-1_ubuntu22.04_x86_64.deb
-          apt-get install ./srcml*.deb
+          sudo apt-get install ./srcml*.deb
 
       - name: Test
         working-directory: build
