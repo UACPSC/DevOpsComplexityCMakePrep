@@ -1,5 +1,5 @@
 ---
-name: Package
+name: PackageFedora
 
 on: workflow_dispatch
 
