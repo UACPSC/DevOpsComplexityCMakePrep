@@ -57,7 +57,7 @@ jobs:
         working-directory: build
         shell: bash
         run: |
-          curl -L -O https:mlcollard.net/dist/srcml_1.0.0-1_ubuntu20.04_x86_64.deb
+          curl -L -O https://mlcollard.net/dist/srcml_1.0.0-1_ubuntu20.04_x86_64.deb
           apt-get install ./srcml*.deb
 
       - name: Test
