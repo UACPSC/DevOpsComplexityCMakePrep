@@ -20,7 +20,7 @@ jobs:
       - name: Setup packages
         shell: bash
         run :
-          sudo apt-get install ninja-build
+          apt-get install ninja-build
 
       - name: CMake Setup
         working-directory: build
