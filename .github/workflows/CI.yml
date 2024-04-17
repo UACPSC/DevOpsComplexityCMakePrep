@@ -9,4 +9,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup upterm session
-      uses: lhotari/action-debug@main
+    - uses: fawazahmed0/action-debug@main
