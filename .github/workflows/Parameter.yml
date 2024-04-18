@@ -1,12 +1,13 @@
 ---
 name: Parameter
 
-on: workflow_dispatch
-  inputs:
-    tag:
-      description: "Linux version tag"
-      required: true
-      default: "24.04"
+on:
+  workflow_dispatch
+    inputs:
+      tag:
+        description: "Linux version tag"
+        required: true
+        default: "24.04"
 
 jobs:
   build:
